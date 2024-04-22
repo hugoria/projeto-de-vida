@@ -231,7 +231,3 @@ function calculaTempo(tempoObjetivo) {
         return "Prazo Finalizado";
     }
 }
-/*se o tempo for menor que zero, devemos programar para
-que seja exibida uma mensagem de que o prazo foi esgotado. Dessa
-forma, a contagem do tempo que resta ocorrerá apenas se esse tempo
-for positivo.*/
