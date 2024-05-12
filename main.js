@@ -185,14 +185,15 @@ for (let i = 0; i < contadores.length; i++) {
 
 // definição do tempo dos objetivos
 const contadores = document.querySelectorAll(".contador");
-const tempoObjetivo1 = new Date("2023-10-05T00:00:00");
-const tempoObjetivo2 = new Date("2024-10-30T00:00:00");
-const tempoObjetivo3 = new Date("2024-11-05T00:00:00");
-const tempoObjetivo4 = new Date("2024-12-30T00:00:00");
+const tempoObjetivo1 = new Date("2026-04-30T00:00:00");
+const tempoObjetivo2 = new Date("2024-10-15T00:00:00");
+const tempoObjetivo3 = new Date("2024-12-06T00:00:00");
+const tempoObjetivo4 = new Date("2025-01-15T00:00:00");
+const tempoObjetivo5 = new Date("2025-06-27T00:00:00");
 
 //automatizar o código, criar uma variável chamada tempos, que receberá uma lista.
 const tempos =
-[tempoObjetivo1,tempoObjetivo2,tempoObjetivo3,tempoObjetivo4];
+[tempoObjetivo1,tempoObjetivo2,tempoObjetivo3,tempoObjetivo4,tempoObjetivo5];
 
 /*substituindo o valor do índice (0) pela variável contadora i.
 for (let i = 0; i < contadores.length; i++) {
@@ -201,9 +202,13 @@ for (let i = 0; i < contadores.length; i++) {
 
 //função para atualizar o cronômetro e no escopo da função (entre chaves) adicionar o laço de repetição.
 function atualizaCronometro(){
-     for (let i=0; i<contadores.length;i++){
-    contadores[i].textContent = calculaTempo(tempos[i]); } 
-}
+    for (let i=0; i<contadores.length;i++){
+        document.getElementById("dias"+i).textContent = calculaTempo(tempos[i])[0];
+        document.getElementById("horas"+i).textContent = calculaTempo(tempos[i])[1];
+        document.getElementById("min"+i).textContent = calculaTempo(tempos[i])[2];
+        document.getElementById("seg"+i).textContent = calculaTempo(tempos[i])[3];
+    }
+}   
 
 //após a declaração da função, chamamos por ela novamente:
 
@@ -226,8 +231,12 @@ function calculaTempo(tempoObjetivo) {
     minutos %= 60;
     horas %= 24;
     if (tempoFinal > 0){
-        return dias + " dias " + horas + " horas " + minutos + " minutos " + segundos + " segundos";
+        return [dias, horas, minutos, segundos];
     } else {
-        return "Prazo Finalizado";
+        return [0,0,0,0];
     }
 }
+/*se o tempo for menor que zero, devemos programar para
+que seja exibida uma mensagem de que o prazo foi esgotado. Dessa
+forma, a contagem do tempo que resta ocorrerá apenas se esse tempo
+for positivo.*/

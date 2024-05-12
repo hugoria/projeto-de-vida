@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap');
 
-:root {
-    --cor-de-fundo: #1E1E1E;
-    --verde: #f033b7;
-    --branco: #FFFFFF;
-    --botao-ativo: #3A375E;
-    --botao-inativo: rgba(58, 55, 94, 0.5);
-    --texto-fundo: rgba(58, 55, 94, 0.3);
+:root{
+    --cor-de-fundo:#631040; 
+    --branco:#FFFFFF;
+    --rosa:#ffffff;
+    --botao-ativo:#ff3d3d;
+    --botao-inativo:#ff2fa8;
+    --texto-fundo:#ffb2dc;
 }
 
 body {
@@ -28,11 +28,11 @@ body {
 .titulo-principal {
     text-align: left;
     width: 100%;
-    font-size: 32px;
+    font-size: 20px;
 }
 
 .titulo-principal span {
-    color: var(--verde);
+    color: var(--rosa);
 }
 
 
@@ -62,11 +62,11 @@ body {
 
 .botao.ativo{
     background-color: var(--botao-ativo);
-    border-bottom: 4px solid var(--verde);
+    border-bottom: 4px solid var(--rosa);
 }
 
 .abas-textos{
-    background-color: var(--texto-fundo);
+    background-color: var(--botao-inativo);
     padding: 40px;
     border-radius: 0 0 40px 40px;
 }
@@ -84,15 +84,32 @@ body {
 }
 .aba-conteudo-titulo-secundario{
     text-align: center;
-    color: var(--verde);
+    color: var(--rosa);
     text-transform: uppercase;
 }
 
 .contador{  /*aula6*/
-    font-size: 20px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
+.contador-digito{
+    padding: 0 16px;
+    text-align: center;
+    flex-wrap: wrap;
+    min-width: 100px;
+}
+
+.contador-digito-numero{
+    font-size: 80px;
+    margin: 0;
+}
+
+.contador-digito-texto{
+    color: var(--rosa);
+    font-size: 20px;
+    margin: 0;
+}
 @media screen and (min-width: 768px) {
     .botoes {
         display: flex;
